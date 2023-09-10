@@ -1,0 +1,100 @@
+:root
+{
+    --shipOffsetX: 0px;
+    --shipOffsetY: 0px;
+}
+.obj
+{
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+}
+.ship1
+{
+    height: 50px;
+    width: 250px;
+    bottom: 25%;
+    transform: translate(calc(-50% + var(--shipOffsetX)), calc(-50% + var(--shipOffsetY)));
+    background-image:
+    linear-gradient(
+        to bottom,
+        rgb(76, 55, 23),
+        rgb(122, 89, 35) 2px,
+        rgb(122, 89, 35) 2px,
+        rgb(122, 89, 35) 5px
+    );
+    background-size: 10px 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 50px 50px;
+    border-bottom-right-radius: 100px 50px;
+    border-top-width: 2px;
+    border-left-width: 5px;
+    border-right-width: 10px;
+    border-bottom-width: 5px;
+    border-style: solid;
+    border-color: rgb(76, 55, 23);
+    z-index: 10;
+}
+.ship1::after
+{
+    content: '';
+    height: 5px;
+    width: 50px;
+    right: -60px;
+    position: absolute;
+    background-image: linear-gradient(rgb(122, 89, 35) 50%, rgb(76, 55, 23) 90%);
+    z-index: 10;
+    transform: rotateZ(-30deg) translateY(-15px);
+}
+.ship1::before
+{
+    content: '';
+    height: 150px;
+    width: 5px;
+    top: -150px;
+    left: 50%;
+    position: absolute;
+    background-image: linear-gradient(to right, rgb(122, 89, 35) 50%, rgb(76, 55, 23) 90%);
+    z-index: 10;
+}
+.sail
+{
+    height: 100px;
+    width: 100px;
+    top: -130px;
+    left: 120px;
+    background-color: rgb(239, 211, 176);
+    border-top-right-radius: 70px;
+    border-bottom-right-radius: 50px;
+    z-index: 11;
+    transform: skewX(30deg);
+}
+#canon
+{
+    position: absolute;
+    background-image: radial-gradient(rgb(95, 94, 87) 30%, rgb(70, 68, 66) 90%);
+    width: 40px;
+    height: 80px;
+    bottom: -10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 10px 50%;
+    border-top-right-radius: 10px 50%;
+    z-index: 12;
+}
+#canon::after
+{
+    content: '';
+    position: absolute;
+    background-image: radial-gradient(rgb(95, 94, 87) 30%, rgb(70, 68, 66) 90%);
+    width: 30px;
+    height: 10px;
+    top: -9px;
+    left: 5px;
+    z-index: 12;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
